@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Montserrat:wght@100&family=Oswald&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    min-height: 100vh;
+    background: linear-gradient(#2b1055, #7597de);
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 1000;
+}
+header> #logo{
+    margin-top: 0px;
+}
+header> ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header>ul>li{
+    list-style: none;
+    margin-left: 20px;
+}
+header>ul>li>a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+header>ul>li>a:hover, header>ul>li>.active{
+    background: #fff;
+    color: #2b1055;
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex; /* each element aisa soch rha he ki wo akele ho */
+    justify-content: center;
+    align-items: center; 
+    overflow: hidden; /* VERY IMPORTANT */
+}
+.blur-effect-at-btm{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #1c0522, transparent);
+    z-index: 1000;
+}
+section>img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section>#moon{
+    mix-blend-mode: screen; /* This effect generally lightens the colors of the image by effectively inverting the colors of the underlying elements*/
+}
+section>#mountains_front{
+    z-index: 10;
+}
+#text{
+    position: absolute; /* samajh nhi aaya */
+    right: -450px;
+    color: #fff;
+    white-space: nowrap;
+    letter-spacing: 5px;
+    font-size: 7.5vw; /* */
+    z-index: 9;
+}
+#btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #2b1055;
+    font: 1.5em;
+    z-index: 9;
+    transform: translateY(100px); /* NOTE */
+}
+.sec{
+    position: relative;
+    padding: 100px;
+    background: #1c0522;
+}
+.sec>h2{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+    text-align: center;
+}
+.sec>p{
+    font-size: 1em;
+    color: #fff;
+}
+@keyframes bounce {
+    0%{
+        transform: translateY(100px);
+    }
+    40%{
+        transform: translateY(150px);
+    }
+    100%{
+        transform: translateY(100px);
+    }
+    
+}
+.bounce-class{
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+}
+.sponsors{
+    background: #1c0522;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.card{
+    background:  #16071b;
+    border: 1px solid #1e1d20;
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    letter-spacing: 1px;
+    transition-property: all;
+    transition-duration: .1s;
+    white-space: nowrap;
+}
+.card>img{
+    object-fit: fill;
+    border-radius: 10px;
+}
+.card:hover{
+    transform: translateX(50px) translateY(-50px) scale(1.2);
+
+}
+
+/* 
+    100vh height ka matlab hota hai screen me jitna dikh rha he utne tak ka height uske niche jaoge to overflow hota hei
+*/
